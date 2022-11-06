@@ -5,7 +5,10 @@ import {
 	Events,
 	GatewayIntentBits, Partials, Routes
 } from 'discord.js';
-import { clientId, guildId, token } from '../rsc/config.json';
+let clientId = process.env.clientId!
+let guildId = process.env.guildId!
+let token = process.env.token!
+
 import IntroduceCommand from './commands/Introduce';
 
 const client = new Client({
