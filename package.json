@@ -2,9 +2,9 @@
 	"name": "scham-dich-bot",
 	"version": "1.0.0",
 	"description": "",
-	"main": "./src/Bot.ts",
+	"main": "./src/index.ts",
 	"scripts": {
-		"start": "ts-node src/Bot.ts"
+		"start": "ts-node src/index.ts"
 	},
 	"author": "Lukas Wollmann",
 	"license": "ISC",

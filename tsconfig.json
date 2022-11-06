@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"target": "ESNext",
 		"module": "commonjs",
-		"rootDir": "./src/",
+		"rootDir": ".",
 		"outDir": "./dist/",
 		"strict": true,
 		"moduleResolution": "node",
@@ -21,10 +21,10 @@
 		"baseUrl": "./"
 	},
 	"files": [
-		"src/Bot.ts"
+		"src/index.ts"
 	],
 	"include": [
-		"./**/*.ts"
+		"./**/*.ts",
 	],
 	"exclude": [
 		"node_modules",
