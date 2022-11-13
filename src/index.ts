@@ -18,9 +18,9 @@ const client = new Client({
 
 const rest = new REST({ version: '10' }).setToken(token);
 
-client.on('ready', () => console.log(`${client.user!.tag} has logged in!`));
+client.on(Events.ClientReady, () => console.log(`${client.user!.tag} has logged in!`));
 
-client.on('interactionCreate', (interaction) => {
+client.on(Events.InteractionCreate, (interaction) => {
 	if (interaction.isChatInputCommand()) {
 		console.log('Chat Command');
 		if (interaction.commandName === 'introduce') {
@@ -63,19 +63,6 @@ client.on('interactionCreate', (interaction) => {
 			interaction.reply("Danke, dass du dir die Zeit genommen hast.");
 		}
 	}
-});
-
-client.on(Events.MessageReactionAdd, async (reaction, user) => {
-	if (reaction.emoji.name !== "✅")
-		return;
-	if (reaction.message.channelId !== "1030541665640919040")
-		return;
-	if (reaction.message.id !== "1037054865999925318")
-		return;
-	(await user.createDM()).send("https://media.discordapp.net/attachments/1017923600155676802/1030552815204048996/a-team-meme.jpg?width=676&height=676");
-	(await user.createDM()).send("Bitte stelle dich mit \"`/introduce`\" in `#steckbrief` vor.");
-	let guild = user.client.guilds.cache.get("1023938346248056874")!;
-	guild.members.cache.get(user.id)!.roles.add(guild.roles.cache.get("1030539084906631168")!);
 });
 
 async function main() {
